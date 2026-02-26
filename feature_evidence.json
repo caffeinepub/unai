@@ -1,0 +1,261 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-establish-a-global-design-system-and-theme-foundation-primary-background-bdd8e9-accent-palette-001d39-deep-navy-0a4174-royal-blue-49769f-muted-blue-4e8ea2-teal-6ea2b3-soft-blue-7bbde8-highlight-blue-load-google-fonts-playfair-display-or-cormorant-garamond-for-all-headings-with-large-letter-spacing-inter-for-all-body-text-define-css-custom-properties-for-all-palette-colors-spacing-8pt-grid-and-corner-radii-16-28px-apply-120px-vertical-section-padding-and-max-width-1200px-content-container-globally",
+      "featureTitle": "Establish a global design system and theme foundation: primary background #BDD8E9, accent palette (#001D39 Deep Navy, #0A4174 Royal Blue, #49769F Muted Blue, #4E8EA2 Teal, #6EA2B3 Soft Blue, #7BBDE8 Highlight Blue). Load Google Fonts: Playfair Display (or Cormorant Garamond) for all headings with large letter-spacing, Inter for all body text. Define CSS custom properties for all palette colors, spacing (8pt grid), and corner radii (16–28px). Apply 120px+ vertical section padding and max-width 1200px content container globally.",
+      "files": [
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-global-premium-ui-features-1-custom-cursor-a-small-soft-circle-that-scales-up-on-hoverable-elements-2-page-load-animation-a-brief-full-screen-fade-slide-reveal-with-the-unai-logotype-before-content-appears-3-smooth-page-transitions-fade-or-slide-between-routes-300ms-ease-in-out-4-dark-light-theme-toggle-dark-theme-uses-001d39-background-with-light-typography-toggle-persists-to-localstorage-5-scroll-reveal-animations-elements-fade-and-translate-up-20px-into-view-on-scroll-using-intersectionobserver-6-reusable-glass-morphism-card-component-backdrop-filter-blur-12px-background-rgba-255-255-255-0-12-soft-box-shadow-border-rgba-255-255-255-0-2-border-radius-20px",
+      "featureTitle": "Implement global premium UI features: (1) Custom cursor — a small soft circle that scales up on hoverable elements. (2) Page load animation — a brief full-screen fade/slide reveal with the UNAI logotype before content appears. (3) Smooth page transitions — fade or slide between routes (300ms ease-in-out). (4) Dark / Light theme toggle — dark theme uses #001D39 background with light typography; toggle persists to localStorage. (5) Scroll-reveal animations — elements fade and translate up (20px) into view on scroll using IntersectionObserver. (6) Reusable glass morphism card component: backdrop-filter blur(12px), background rgba(255,255,255,0.12), soft box-shadow, border rgba(255,255,255,0.2), border-radius 20px.",
+      "files": [
+        "frontend/src/components/CustomCursor.tsx",
+        "frontend/src/components/GlassCard.tsx",
+        "frontend/src/components/PageLoadAnimation.tsx",
+        "frontend/src/hooks/useScrollReveal.ts"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-persistent-global-navbar-and-footer-navbar-unai-logotype-serif-left-aligned-navigation-links-home-about-services-products-events-careers-gallery-contact-dark-light-toggle-icon-and-a-talk-to-us-cta-button-navbar-is-sticky-with-a-glass-morphism-background-on-scroll-footer-minimal-dark-navy-001d39-background-unai-logo-nav-links-tagline-technology-with-purpose-and-social-icon-placeholders-section-dividers-between-pages-should-use-unique-svg-or-geometric-line-motifs-instead-of-plain-horizontal-rules",
+      "featureTitle": "Build a persistent global Navbar and Footer. Navbar: UNAI logotype (serif, left-aligned), navigation links (Home, About, Services, Products, Events, Careers, Gallery, Contact), dark/light toggle icon, and a 'Talk to Us' CTA button. Navbar is sticky with a glass morphism background on scroll. Footer: minimal dark navy (#001D39) background, UNAI logo, nav links, tagline 'Technology with Purpose', and social icon placeholders. Section dividers between pages should use unique SVG or geometric line motifs instead of plain horizontal rules.",
+      "files": [
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/components/Navbar.tsx",
+        "frontend/src/components/SectionDivider.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-home-page-with-six-sections-1-full-screen-parallax-hero-split-layout-left-side-has-large-serif-heading-enterprise-technology-reimagined-subtitle-and-two-ctas-explore-services-talk-to-us-right-side-has-an-abstract-3d-style-tech-visual-three-js-scene-with-floating-geometric-shapes-or-animated-svg-parallax-background-geometric-shapes-scroll-at-0-3x-speed-relative-to-foreground-floating-glass-cards-overlay-with-micro-stats-subtle-particle-layer-2-about-preview-z-pattern-left-image-right-text-block-with-glass-overlay-card-showing-metrics-12-years-experience-350-projects-delivered-18-industries-served-3-services-cards-4-large-glass-cards-ai-solutions-enterprise-systems-digital-transformation-consulting-strategy-each-card-has-a-custom-icon-one-line-descriptor-hover-elevation-translatey-8px-shadow-deepens-and-animated-border-reveal-on-hover-4-products-highlight-horizontal-scroll-parallax-strip-with-3-4-product-mockup-cards-sliding-at-0-6x-scroll-speed-section-title-our-products-floats-above-5-events-innovation-full-width-dark-navy-001d39-section-with-high-contrast-white-heading-event-preview-cards-and-a-view-all-events-link-6-cta-footer-section-minimal-centered-large-serif-let-s-build-the-future-together-subtext-and-start-a-project-button",
+      "featureTitle": "Build the Home page with six sections: (1) Full-screen parallax hero — split layout: left side has large serif heading ('Enterprise Technology. Reimagined.'), subtitle, and two CTAs ('Explore Services', 'Talk to Us'); right side has an abstract 3D-style tech visual (Three.js scene with floating geometric shapes or animated SVG). Parallax: background geometric shapes scroll at 0.3x speed relative to foreground. Floating glass cards overlay with micro-stats. Subtle particle layer. (2) About Preview — Z-pattern: left image, right text block with glass overlay card showing metrics: '12+ Years Experience', '350+ Projects Delivered', '18 Industries Served'. (3) Services Cards — 4 large glass cards: AI Solutions, Enterprise Systems, Digital Transformation, Consulting & Strategy. Each card has a custom icon, one-line descriptor, hover elevation (translateY -8px, shadow deepens), and animated border reveal on hover. (4) Products Highlight — horizontal scroll parallax strip with 3–4 product mockup cards sliding at 0.6x scroll speed; section title 'Our Products' floats above. (5) Events & Innovation — full-width dark navy (#001D39) section with high-contrast white heading, event preview cards, and a 'View All Events' link. (6) CTA Footer Section — minimal centered: large serif 'Let's Build the Future Together', subtext, and 'Start a Project' button.",
+      "files": [
+        "frontend/src/pages/Home.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-about-page-with-a-magazine-style-asymmetrical-layout-containing-1-full-width-typographic-hero-large-serif-statement-technology-with-purpose-with-a-side-abstract-image-2-vision-mission-section-asymmetric-two-column-oversized-faded-numeral-or-icon-on-one-side-mission-text-on-the-other-3-leadership-philosophy-centered-large-quote-typography-innovation-with-integrity-followed-by-2-3-philosophy-pillars-in-a-horizontal-card-row-4-why-unai-3-column-icon-grid-with-concise-value-propositions-5-horizontal-scrolling-company-timeline-year-markers-and-milestone-text-cards-that-translate-horizontally-on-scroll-scroll-linked-animation-6-team-culture-section-minimal-portrait-placeholders-in-a-grid-on-hover-image-slightly-zooms-a-soft-overlay-appears-with-name-and-role",
+      "featureTitle": "Build the About page with a magazine-style asymmetrical layout containing: (1) Full-width typographic hero: large serif statement 'Technology with Purpose' with a side abstract image. (2) Vision & Mission section — asymmetric two-column: oversized faded numeral or icon on one side, mission text on the other. (3) Leadership Philosophy — centered large quote typography: 'Innovation with Integrity', followed by 2–3 philosophy pillars in a horizontal card row. (4) Why UNAI — 3-column icon grid with concise value propositions. (5) Horizontal scrolling Company Timeline — year markers and milestone text cards that translate horizontally on scroll (scroll-linked animation). (6) Team Culture section — minimal portrait placeholders in a grid; on hover, image slightly zooms, a soft overlay appears with name and role.",
+      "files": [
+        "frontend/src/pages/About.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-services-page-with-alternating-split-screen-sections-for-each-service-each-section-one-half-is-a-large-visual-illustration-placeholder-the-other-half-is-the-service-name-description-and-a-learn-more-link-alternating-left-right-layout-for-each-row-services-ai-development-enterprise-software-cloud-infrastructure-data-analytics-consulting-add-large-faded-vertical-typography-in-the-background-of-each-section-e-g-ai-cloud-at-8-10-opacity-as-a-design-motif-include-a-vertical-animated-process-timeline-at-the-bottom-a-vertical-line-with-nodes-that-animate-in-scale-fade-as-they-enter-the-viewport-each-with-a-step-title-and-brief-description",
+      "featureTitle": "Build the Services page with alternating split-screen sections for each service. Each section: one half is a large visual/illustration placeholder, the other half is the service name, description, and a 'Learn More' link — alternating left/right layout for each row. Services: AI Development, Enterprise Software, Cloud & Infrastructure, Data & Analytics, Consulting. Add large faded vertical typography in the background of each section (e.g., 'AI', 'CLOUD') at ~8–10% opacity as a design motif. Include a vertical animated process timeline at the bottom: a vertical line with nodes that animate in (scale + fade) as they enter the viewport, each with a step title and brief description.",
+      "files": [
+        "frontend/src/pages/Services.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-products-page-as-a-premium-product-showcase-each-product-block-contains-a-large-mockup-image-placeholder-product-name-in-large-serif-type-a-short-specs-line-a-bulleted-feature-list-and-a-request-demo-cta-button-include-at-least-3-product-entries-add-a-comparison-section-below-a-minimal-grid-table-comparing-products-across-key-feature-rows-clean-lines-no-heavy-borders-alternating-soft-row-shading",
+      "featureTitle": "Build the Products page as a premium product showcase. Each product block contains: a large mockup image placeholder, product name in large serif type, a short specs line, a bulleted feature list, and a 'Request Demo' CTA button. Include at least 3 product entries. Add a Comparison Section below: a minimal grid table comparing products across key feature rows — clean lines, no heavy borders, alternating soft row shading.",
+      "files": [
+        "frontend/src/pages/Products.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-events-page-with-a-card-masonry-layout-event-categories-conferences-product-launches-tech-summits-webinars-each-event-card-category-tag-date-event-title-short-description-soft-glass-card-style-with-hover-elevation-include-a-parallax-full-width-banner-section-with-the-headline-where-innovation-meets-industry-over-a-dark-navy-background-with-a-subtle-layered-depth-effect-add-a-category-filter-row-all-conferences-product-launches-tech-summits-webinars-that-filters-the-visible-cards-with-a-smooth-fade-transition",
+      "featureTitle": "Build the Events page with a card masonry layout. Event categories: Conferences, Product Launches, Tech Summits, Webinars. Each event card: category tag, date, event title, short description, soft glass card style with hover elevation. Include a parallax full-width banner section with the headline 'Where Innovation Meets Industry' over a dark navy background with a subtle layered depth effect. Add a category filter row (All / Conferences / Product Launches / Tech Summits / Webinars) that filters the visible cards with a smooth fade transition.",
+      "files": [
+        "frontend/src/pages/Events.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-careers-page-with-1-culture-statement-full-width-typographic-section-with-a-large-serif-headline-and-subtext-about-unai-s-culture-2-why-work-at-unai-horizontal-row-of-3-4-benefit-cards-with-icons-each-with-a-hover-micro-interaction-soft-lift-3-open-positions-accordion-layout-each-role-is-a-collapsed-row-showing-title-and-department-clicking-expands-to-show-description-and-an-apply-now-link-4-application-cta-minimal-centered-section-shape-the-future-with-us-heading-and-a-primary-cta-button-5-soft-animated-background-gradient-a-very-slow-subtle-css-gradient-animation-that-shifts-through-the-blue-palette-shades-in-the-background-of-the-culture-statement-section",
+      "featureTitle": "Build the Careers page with: (1) Culture Statement — full-width typographic section with a large serif headline and subtext about UNAI's culture. (2) Why Work at UNAI — horizontal row of 3–4 benefit cards with icons, each with a hover micro-interaction (soft lift). (3) Open Positions — accordion layout: each role is a collapsed row showing title and department; clicking expands to show description and an 'Apply Now' link. (4) Application CTA — minimal centered section: 'Shape the Future with Us' heading and a primary CTA button. (5) Soft animated background gradient — a very slow, subtle CSS gradient animation that shifts through the blue palette shades in the background of the culture statement section.",
+      "files": [
+        "frontend/src/pages/Careers.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-gallery-page-with-a-css-masonry-grid-layout-varied-card-heights-display-at-least-12-gallery-items-each-item-on-hover-the-image-slightly-zooms-scale-1-05-a-dark-overlay-fades-in-and-a-title-appears-over-the-image-category-filter-bar-all-events-products-office-filters-items-with-a-smooth-fade-reorder-animation-gallery-items-are-categorized-and-filtered-client-side-using-react-state",
+      "featureTitle": "Build the Gallery page with a CSS masonry grid layout (varied card heights). Display at least 12 gallery items. Each item: on hover, the image slightly zooms (scale 1.05), a dark overlay fades in, and a title appears over the image. Category filter bar: All / Events / Products / Office — filters items with a smooth fade/reorder animation. Gallery items are categorized and filtered client-side using React state.",
+      "files": [
+        "frontend/src/pages/Gallery.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-contact-page-with-a-split-screen-layout-left-half-contains-a-minimal-contact-form-with-glass-style-inputs-rounded-corners-20px-semi-transparent-background-soft-border-focus-glow-in-7bbde8-form-fields-full-name-company-email-phone-message-and-a-send-message-submit-button-right-half-contains-a-stylized-placeholder-map-block-minimal-flat-style-rectangle-with-grid-lines-and-a-pin-icon-no-external-map-service-and-below-it-company-contact-details-address-email-phone-in-clean-typography-page-headline-large-serif-start-the-conversation-spanning-above-the-split-layout-form-submission-stores-the-message-in-the-backend-motoko-actor-and-shows-a-success-confirmation-inline",
+      "featureTitle": "Build the Contact page with a split-screen layout: Left half contains a minimal contact form with glass-style inputs (rounded corners 20px, semi-transparent background, soft border, focus glow in #7BBDE8). Form fields: Full Name, Company, Email, Phone, Message, and a 'Send Message' submit button. Right half contains: a stylized placeholder map block (minimal flat-style rectangle with grid lines and a pin icon, no external map service), and below it: company contact details (address, email, phone) in clean typography. Page headline: large serif 'Start the Conversation.' spanning above the split layout. Form submission stores the message in the backend (Motoko actor) and shows a success confirmation inline.",
+      "files": [
+        "frontend/src/pages/Contact.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-react-router-based-multi-page-routing-for-all-8-pages-about-services-products-events-careers-gallery-contact-each-route-renders-the-corresponding-page-component-navigation-links-in-the-navbar-and-footer-route-to-the-correct-page-all-routes-are-handled-client-side",
+      "featureTitle": "Implement React Router-based multi-page routing for all 8 pages: /, /about, /services, /products, /events, /careers, /gallery, /contact. Each route renders the corresponding page component. Navigation links in the Navbar and Footer route to the correct page. All routes are handled client-side.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-generate-all-required-static-visual-assets-for-the-website-hero-abstract-tech-background-image-about-section-feature-image-placeholder-product-mockup-images-3-placeholder-team-portrait-images-6-placeholder-gallery-images-12-across-categories-and-a-service-illustration-for-each-of-the-5-services-store-all-generated-images-in-frontend-public-assets-generated-reference-them-by-relative-path-in-the-frontend-components",
+      "featureTitle": "Generate all required static visual assets for the website: hero abstract tech background image, about section feature image, placeholder product mockup images (3), placeholder team portrait images (6), placeholder gallery images (12 across categories), and a service illustration for each of the 5 services. Store all generated images in frontend/public/assets/generated. Reference them by relative path in the frontend components.",
+      "files": [
+        "frontend/src/pages/About.tsx",
+        "frontend/src/pages/Gallery.tsx",
+        "frontend/src/pages/Home.tsx",
+        "frontend/src/pages/Products.tsx",
+        "frontend/src/pages/Services.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

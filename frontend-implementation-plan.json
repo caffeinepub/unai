@@ -1,0 +1,309 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "UNAI Luxury Minimal Corporate Multi-Page Website - Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Establish global design system with luxury color palette, typography, spacing, and layout constraints",
+      "acceptanceCriteria": [
+        "All pages render with #BDD8E9 as the background base color",
+        "Headings use Playfair Display or Cormorant Garamond with generous letter-spacing",
+        "Body text uses Inter or equivalent clean sans-serif",
+        "All six accent colors are available as CSS variables and applied consistently",
+        "Section padding is at minimum 120px top/bottom on all major sections",
+        "Content is constrained to max 1200px and horizontally centered"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add CSS custom properties for the six-color palette (#001D39, #0A4174, #49769F, #4E8EA2, #6EA2B3, #7BBDE8), spacing scale based on 8pt grid, corner radii (16-28px), and set global background to #BDD8E9. Import Google Fonts (Playfair Display and Inter) with font-display swap. Define heading and body font stacks."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create a Layout component that wraps all page content with max-width 1200px, horizontal centering, and applies 120px+ vertical padding to sections. This layout enforces the global content container and spacing constraints."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement premium UI features: custom cursor, page load animation, smooth transitions, theme toggle, scroll-reveal, and glass morphism card",
+      "acceptanceCriteria": [
+        "Custom cursor is visible and scales on hover over interactive elements",
+        "Page load animation plays once per visit before content is shown",
+        "Route changes animate with a smooth fade or slide transition",
+        "Dark/light toggle is accessible from the navbar and persists across sessions",
+        "Scroll-reveal fade-up animation fires for all major content blocks",
+        "GlassCard component renders with correct blur, translucent background, soft shadow, and rounded corners"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CustomCursor.tsx",
+          "operation": "create",
+          "description": "Create a custom cursor component that tracks mouse position and renders a small soft circle. Scale up (e.g., 1.5x) when hovering over interactive elements (links, buttons). Use pointer-events: none to avoid interference."
+        },
+        {
+          "path": "frontend/src/components/PageLoadAnimation.tsx",
+          "operation": "create",
+          "description": "Create a full-screen page load animation component that displays the UNAI logotype with a fade/slide reveal effect. Play once on initial visit, then fade out to reveal content. Use localStorage or sessionStorage to prevent replay on subsequent navigations."
+        },
+        {
+          "path": "frontend/src/components/PageTransition.tsx",
+          "operation": "create",
+          "description": "Create a PageTransition wrapper component that animates route changes with a 300ms ease-in-out fade or slide transition. Integrate with React Router to wrap page components."
+        },
+        {
+          "path": "frontend/src/components/ThemeToggle.tsx",
+          "operation": "create",
+          "description": "Create a ThemeToggle component that switches between light (default #BDD8E9 background) and dark (#001D39 background with light typography) themes. Persist theme preference to localStorage. Expose a toggle button with an icon."
+        },
+        {
+          "path": "frontend/src/hooks/useScrollReveal.ts",
+          "operation": "create",
+          "description": "Create a useScrollReveal custom hook using IntersectionObserver. Elements fade and translate up 20px into view on scroll. Return a ref to attach to elements that should animate."
+        },
+        {
+          "path": "frontend/src/components/GlassCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable GlassCard component with backdrop-filter blur(12px), background rgba(255,255,255,0.12), soft box-shadow, border rgba(255,255,255,0.2), and border-radius 20px. Accept children and optional className props."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Build persistent Navbar and Footer with glass morphism, navigation links, theme toggle, and unique section dividers",
+      "acceptanceCriteria": [
+        "Navbar is present on all pages and links route correctly to each page",
+        "Navbar becomes glass-morphic (blurred background) after scrolling 50px",
+        "Dark/light toggle is visible in the navbar",
+        "Footer renders on all pages with navy background, logo, and links",
+        "Section dividers use a unique geometric or typographic motif, not a plain <hr>"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Navbar.tsx",
+          "operation": "create",
+          "description": "Create a sticky Navbar component with UNAI logotype (serif, left-aligned), navigation links (Home, About, Services, Products, Events, Careers, Gallery, Contact), ThemeToggle, and 'Talk to Us' CTA button. Apply glass morphism background on scroll (after 50px). Use React Router Link for navigation."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "create",
+          "description": "Create a Footer component with minimal dark navy (#001D39) background, UNAI logo, navigation links, tagline 'Technology with Purpose', and social icon placeholders. Use React Router Link for navigation."
+        },
+        {
+          "path": "frontend/src/components/SectionDivider.tsx",
+          "operation": "create",
+          "description": "Create a SectionDivider component that renders a unique SVG or geometric line motif instead of a plain horizontal rule. Use custom shapes, patterns, or typographic elements in the accent color palette."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build Home page with six sections: parallax hero, about preview, services cards, products highlight, events section, and CTA footer",
+      "acceptanceCriteria": [
+        "Hero is full viewport height with a split left/right layout",
+        "Parallax depth effect is visible on scroll (background shapes move slower than content)",
+        "Two hero CTAs are present and link to /services and /contact",
+        "About preview section follows Z-pattern with glass metrics card overlay",
+        "Services section renders 4 cards with hover elevation and border animation",
+        "Products highlight section has horizontal scroll behavior with mock product cards",
+        "Events section has a dark navy background with white typography",
+        "CTA footer section renders the 'Let's Build the Future Together' headline"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "create",
+          "description": "Create the Home page with six sections: (1) Full-screen parallax hero split layout with large serif heading 'Enterprise Technology. Reimagined.', subtitle, two CTAs (link to /services and /contact), and reference the generated hero background image at frontend/public/assets/generated/hero-bg.dim_1920x1080.png. Implement parallax scrolling with background shapes at 0.3x speed. Include floating glass cards with micro-stats and subtle particle layer. (2) About preview Z-pattern with left image (about-feature.dim_900x700.png) and right text block with glass overlay card showing '12+ Years Experience', '350+ Projects Delivered', '18 Industries Served'. (3) Services cards section with 4 large glass cards (AI Solutions, Enterprise Systems, Digital Transformation, Consulting & Strategy), each with custom icon, descriptor, hover elevation (translateY -8px), and animated border reveal. (4) Products highlight horizontal scroll parallax strip with 3-4 product mockup cards (product-mockup-1.dim_800x560.png, product-mockup-2.dim_800x560.png, product-mockup-3.dim_800x560.png) sliding at 0.6x scroll speed. (5) Events & Innovation full-width dark navy (#001D39) section with white heading, event preview cards, and 'View All Events' link. (6) CTA footer section with large serif 'Let's Build the Future Together', subtext, and 'Start a Project' button."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Build About page with magazine-style asymmetrical layout including vision, mission, philosophy, values, timeline, and team culture",
+      "acceptanceCriteria": [
+        "About page hero displays the serif statement 'Technology with Purpose'",
+        "Vision & Mission, Leadership Philosophy, and Why UNAI sections are all present",
+        "Timeline section scrolls horizontally as the user scrolls vertically (or has a horizontal drag/scroll container)",
+        "Team grid items reveal name and role overlay on hover with smooth zoom transition",
+        "Layout is asymmetric and magazine-inspired, not a uniform two-column grid throughout"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/About.tsx",
+          "operation": "create",
+          "description": "Create the About page with magazine-style asymmetrical layout containing: (1) Full-width typographic hero with large serif 'Technology with Purpose' and side abstract image. (2) Vision & Mission asymmetric two-column section with oversized faded numeral/icon and mission text. (3) Leadership Philosophy centered large quote 'Innovation with Integrity' with 2-3 philosophy pillar cards in horizontal row. (4) Why UNAI 3-column icon grid with value propositions. (5) Horizontal scrolling Company Timeline with year markers and milestone text cards that translate horizontally on scroll (scroll-linked animation). (6) Team Culture section with minimal portrait grid using generated team images (team-1.dim_400x500.png through team-6.dim_400x500.png); on hover, image zooms slightly with soft overlay showing name and role."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Build Services page with alternating split-screen sections and vertical animated process timeline",
+      "acceptanceCriteria": [
+        "Five service sections render with alternating left/right image-text split layout",
+        "Faded vertical background text is present for each service section",
+        "Vertical process timeline is present at the bottom of the page",
+        "Timeline nodes animate in as they enter the viewport on scroll",
+        "Each service section has a 'Learn More' interactive element"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Services.tsx",
+          "operation": "create",
+          "description": "Create the Services page with alternating split-screen sections for five services (AI Development, Enterprise Software, Cloud & Infrastructure, Data & Analytics, Consulting). Each section has one half with a large visual placeholder (service-ai.dim_600x500.png, service-enterprise.dim_600x500.png, service-cloud.dim_600x500.png, service-data.dim_600x500.png, service-consulting.dim_600x500.png) and the other half with service name, description, and 'Learn More' link. Alternate left/right layout for each row. Add large faded vertical typography (e.g., 'AI', 'CLOUD') at 8-10% opacity in the background of each section. Include a vertical animated process timeline at the bottom with a vertical line and nodes that animate in (scale + fade) using IntersectionObserver, each with step title and description."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Build Products page as premium showcase with product blocks and comparison grid",
+      "acceptanceCriteria": [
+        "At least 3 product showcase blocks are rendered",
+        "Each product has a mockup image, name, specs, feature bullets, and 'Request Demo' button",
+        "A comparison grid/table is present below the product showcases",
+        "Comparison table is minimal with clean lines and no heavy borders"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Products.tsx",
+          "operation": "create",
+          "description": "Create the Products page as a premium product showcase. Each product block contains a large mockup image (product-mockup-1.dim_800x560.png, product-mockup-2.dim_800x560.png, product-mockup-3.dim_800x560.png), product name in large serif type, short specs line, bulleted feature list, and 'Request Demo' CTA button. Include at least 3 product entries. Add a Comparison Section below with a minimal grid table comparing products across key feature rows using clean lines, no heavy borders, and alternating soft row shading."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Build Events page with card masonry layout, category filter, and parallax banner",
+      "acceptanceCriteria": [
+        "Events are displayed in a masonry or irregular card grid layout",
+        "Category filter row filters events with a smooth animation",
+        "Parallax banner with 'Where Innovation Meets Industry' is present",
+        "Event cards include category tag, date, title, and description",
+        "At least 6 sample event cards are populated across the four categories"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Events.tsx",
+          "operation": "create",
+          "description": "Create the Events page with a card masonry layout. Event categories: Conferences, Product Launches, Tech Summits, Webinars. Each event card includes category tag, date, event title, short description, soft glass card style with hover elevation. Include a parallax full-width banner section with headline 'Where Innovation Meets Industry' over dark navy background with subtle layered depth effect. Add a category filter row (All / Conferences / Product Launches / Tech Summits / Webinars) that filters visible cards with smooth fade transition using React state."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Build Careers page with culture statement, benefits, open positions accordion, application CTA, and animated gradient",
+      "acceptanceCriteria": [
+        "Culture statement section renders with large serif headline",
+        "Why Work at UNAI section has at least 3 benefit cards with hover effects",
+        "Open positions accordion renders with at least 4 sample roles that expand/collapse smoothly",
+        "Apply Now link is present inside each expanded accordion item",
+        "Application CTA section is present at the bottom",
+        "Animated background gradient is visible in the culture section (slow, subtle, no harsh flicker)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Careers.tsx",
+          "operation": "create",
+          "description": "Create the Careers page with: (1) Culture Statement full-width typographic section with large serif headline and subtext about UNAI's culture, with a soft animated background gradient that slowly shifts through blue palette shades. (2) Why Work at UNAI horizontal row of 3-4 benefit cards with icons and hover micro-interaction (soft lift). (3) Open Positions accordion layout with at least 4 sample roles (collapsed rows showing title and department; clicking expands to show description and 'Apply Now' link). (4) Application CTA minimal centered section with 'Shape the Future with Us' heading and primary CTA button."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Build Gallery page with CSS masonry grid, hover effects, and category filter",
+      "acceptanceCriteria": [
+        "Gallery renders in a masonry grid with varied card heights",
+        "At least 12 gallery items are present, distributed across four categories",
+        "Hover effect shows zoom, dark overlay, and title text simultaneously",
+        "Category filter buttons are present and functional, filtering items with animation",
+        "Filtering is client-side and instantaneous (no backend call)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Gallery.tsx",
+          "operation": "create",
+          "description": "Create the Gallery page with CSS masonry grid layout (varied card heights). Display at least 12 gallery items using generated images: gallery-events-1.dim_800x600.png, gallery-events-2.dim_800x600.png, gallery-events-3.dim_800x600.png (Events category), gallery-products-1.dim_800x600.png, gallery-products-2.dim_800x600.png, gallery-products-3.dim_800x600.png (Products category), gallery-office-1.dim_800x600.png, gallery-office-2.dim_800x600.png, gallery-office-3.dim_800x600.png (Office category), gallery-webinar-1.dim_800x600.png, gallery-webinar-2.dim_800x600.png, gallery-webinar-3.dim_800x600.png (Webinars category). On hover: image zooms (scale 1.05), dark overlay fades in, title appears. Category filter bar (All / Events / Products / Office / Webinars) filters items with smooth fade/reorder animation using React state."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Build Contact page with split-screen layout, glass-style form, and backend integration for submissions",
+      "acceptanceCriteria": [
+        "Page headline 'Start the Conversation.' is rendered in large serif typography",
+        "Split-screen layout is present with form on left and map+info on right",
+        "Form inputs have glass morphism styling with rounded corners and soft focus glow",
+        "All six form fields are present and validated (name, company, email, phone, message)",
+        "Submitting the form calls the backend actor to store the contact message",
+        "A success confirmation message appears inline after successful submission",
+        "Right panel shows a stylized placeholder map and company contact details",
+        "No external map API is used"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Contact.tsx",
+          "operation": "create",
+          "description": "Create the Contact page with split-screen layout. Page headline 'Start the Conversation.' in large serif spanning above the split. Left half: minimal contact form with glass-style inputs (rounded corners 20px, semi-transparent background, soft border, focus glow in #7BBDE8). Form fields: Full Name, Company, Email, Phone, Message, and 'Send Message' submit button. Right half: stylized placeholder map block (minimal flat-style rectangle with grid lines and pin icon, no external map service) and company contact details (address, email, phone) in clean typography. On form submission, call the backend actor's submitContact method with all five fields. Show an inline success confirmation message after successful submission. Include client-side validation for required fields and email format."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Implement React Router-based multi-page routing for all 8 pages",
+      "acceptanceCriteria": [
+        "All 8 routes are registered and render the correct page",
+        "Navbar links navigate to the correct routes without full page reload",
+        "Direct URL access to each route renders the correct page",
+        "404 / unknown routes redirect to the Home page"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Set up React Router with routes for all 8 pages: / (Home), /about (About), /services (Services), /products (Products), /events (Events), /careers (Careers), /gallery (Gallery), /contact (Contact). Wrap each route with PageTransition component for smooth transitions. Include a catch-all route that redirects to / for 404 handling. Wrap the entire router with Layout component that includes Navbar and Footer. Include CustomCursor and PageLoadAnimation at the app root level."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Wire all generated visual assets into frontend components with correct workspace paths",
+      "acceptanceCriteria": [
+        "Hero background image exists at frontend/public/assets/generated/",
+        "Product mockup images (3) exist and are referenced in the Products page",
+        "Team portrait placeholders (6) exist and are referenced in the About page",
+        "Gallery images (12) exist and are referenced in the Gallery page",
+        "Service illustration images (5) exist and are referenced in the Services page",
+        "All images load without 404 errors"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Wire the hero background image frontend/public/assets/generated/hero-bg.dim_1920x1080.png into the parallax hero section. Wire the about feature image frontend/public/assets/generated/about-feature.dim_900x700.png into the about preview section. Wire the three product mockup images (frontend/public/assets/generated/product-mockup-1.dim_800x560.png, product-mockup-2.dim_800x560.png, product-mockup-3.dim_800x560.png) into the products highlight horizontal scroll section. Reference images using relative paths from the public directory (e.g., /assets/generated/hero-bg.dim_1920x1080.png)."
+        },
+        {
+          "path": "frontend/src/pages/About.tsx",
+          "operation": "modify",
+          "description": "Wire the six team portrait images (frontend/public/assets/generated/team-1.dim_400x500.png through team-6.dim_400x500.png) into the team culture grid section. Reference images using relative paths from the public directory."
+        },
+        {
+          "path": "frontend/src/pages/Services.tsx",
+          "operation": "modify",
+          "description": "Wire the five service illustration images (frontend/public/assets/generated/service-ai.dim_600x500.png, service-enterprise.dim_600x500.png, service-cloud.dim_600x500.png, service-data.dim_600x500.png, service-consulting.dim_600x500.png) into the corresponding service sections. Reference images using relative paths from the public directory."
+        },
+        {
+          "path": "frontend/src/pages/Products.tsx",
+          "operation": "modify",
+          "description": "Wire the three product mockup images (frontend/public/assets/generated/product-mockup-1.dim_800x560.png, product-mockup-2.dim_800x560.png, product-mockup-3.dim_800x560.png) into the product showcase blocks. Reference images using relative paths from the public directory."
+        },
+        {
+          "path": "frontend/src/pages/Gallery.tsx",
+          "operation": "modify",
+          "description": "Wire all 12 gallery images into the masonry grid: Events category (frontend/public/assets/generated/gallery-events-1.dim_800x600.png, gallery-events-2.dim_800x600.png, gallery-events-3.dim_800x600.png), Products category (gallery-products-1.dim_800x600.png, gallery-products-2.dim_800x600.png, gallery-products-3.dim_800x600.png), Office category (gallery-office-1.dim_800x600.png, gallery-office-2.dim_800x600.png, gallery-office-3.dim_800x600.png), Webinars category (gallery-webinar-1.dim_800x600.png, gallery-webinar-2.dim_800x600.png, gallery-webinar-3.dim_800x600.png). Reference images using relative paths from the public directory."
+        }
+      ]
+    }
+  ]
+}

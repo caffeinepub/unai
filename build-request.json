@@ -1,0 +1,416 @@
+{
+  "kind": "build_request",
+  "title": "UNAI — Luxury Minimal Corporate Multi-Page Website",
+  "projectName": "UNAI Corporate",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Establish a global design system and theme foundation: primary background #BDD8E9, accent palette (#001D39 Deep Navy, #0A4174 Royal Blue, #49769F Muted Blue, #4E8EA2 Teal, #6EA2B3 Soft Blue, #7BBDE8 Highlight Blue). Load Google Fonts: Playfair Display (or Cormorant Garamond) for all headings with large letter-spacing, Inter for all body text. Define CSS custom properties for all palette colors, spacing (8pt grid), and corner radii (16–28px). Apply 120px+ vertical section padding and max-width 1200px content container globally.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Primary Background Color: #BDD8E9",
+          "Headings: Modern serif (Playfair / Cormorant / Canela style)",
+          "Body: Clean sans-serif (Inter / Neue Haas Grotesk / SF Pro style)",
+          "Section padding: 120px+",
+          "Content max width: 1200px"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages render with #BDD8E9 as the background base color",
+        "Headings use Playfair Display or Cormorant Garamond with generous letter-spacing",
+        "Body text uses Inter or equivalent clean sans-serif",
+        "All six accent colors are available as CSS variables and applied consistently",
+        "Section padding is at minimum 120px top/bottom on all major sections",
+        "Content is constrained to max 1200px and horizontally centered"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement global premium UI features: (1) Custom cursor — a small soft circle that scales up on hoverable elements. (2) Page load animation — a brief full-screen fade/slide reveal with the UNAI logotype before content appears. (3) Smooth page transitions — fade or slide between routes (300ms ease-in-out). (4) Dark / Light theme toggle — dark theme uses #001D39 background with light typography; toggle persists to localStorage. (5) Scroll-reveal animations — elements fade and translate up (20px) into view on scroll using IntersectionObserver. (6) Reusable glass morphism card component: backdrop-filter blur(12px), background rgba(255,255,255,0.12), soft box-shadow, border rgba(255,255,255,0.2), border-radius 20px.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Micro interactions",
+          "Cursor hover effects",
+          "Smooth page transitions",
+          "Page load animation",
+          "Dark/light theme toggle",
+          "Soft rounded corners (16–28px)",
+          "Glass morphism subtle cards",
+          "Soft shadows (no harsh drop shadows)",
+          "Hover transitions: 300ms ease-in-out"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Custom cursor is visible and scales on hover over interactive elements",
+        "Page load animation plays once per visit before content is shown",
+        "Route changes animate with a smooth fade or slide transition",
+        "Dark/light toggle is accessible from the navbar and persists across sessions",
+        "Scroll-reveal fade-up animation fires for all major content blocks",
+        "GlassCard component renders with correct blur, translucent background, soft shadow, and rounded corners"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build a persistent global Navbar and Footer. Navbar: UNAI logotype (serif, left-aligned), navigation links (Home, About, Services, Products, Events, Careers, Gallery, Contact), dark/light toggle icon, and a 'Talk to Us' CTA button. Navbar is sticky with a glass morphism background on scroll. Footer: minimal dark navy (#001D39) background, UNAI logo, nav links, tagline 'Technology with Purpose', and social icon placeholders. Section dividers between pages should use unique SVG or geometric line motifs instead of plain horizontal rules.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "CTA: Explore Services / Talk to Us",
+          "Custom icon system",
+          "Unique section dividers"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navbar is present on all pages and links route correctly to each page",
+        "Navbar becomes glass-morphic (blurred background) after scrolling 50px",
+        "Dark/light toggle is visible in the navbar",
+        "Footer renders on all pages with navy background, logo, and links",
+        "Section dividers use a unique geometric or typographic motif, not a plain <hr>"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build the Home page with six sections: (1) Full-screen parallax hero — split layout: left side has large serif heading ('Enterprise Technology. Reimagined.'), subtitle, and two CTAs ('Explore Services', 'Talk to Us'); right side has an abstract 3D-style tech visual (Three.js scene with floating geometric shapes or animated SVG). Parallax: background geometric shapes scroll at 0.3x speed relative to foreground. Floating glass cards overlay with micro-stats. Subtle particle layer. (2) About Preview — Z-pattern: left image, right text block with glass overlay card showing metrics: '12+ Years Experience', '350+ Projects Delivered', '18 Industries Served'. (3) Services Cards — 4 large glass cards: AI Solutions, Enterprise Systems, Digital Transformation, Consulting & Strategy. Each card has a custom icon, one-line descriptor, hover elevation (translateY -8px, shadow deepens), and animated border reveal on hover. (4) Products Highlight — horizontal scroll parallax strip with 3–4 product mockup cards sliding at 0.6x scroll speed; section title 'Our Products' floats above. (5) Events & Innovation — full-width dark navy (#001D39) section with high-contrast white heading, event preview cards, and a 'View All Events' link. (6) CTA Footer Section — minimal centered: large serif 'Let's Build the Future Together', subtext, and 'Start a Project' button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Hero Section (Full Screen Parallax)",
+          "Split layout",
+          "Section 2 – About Preview (Z-pattern layout)",
+          "Section 3 – Services (Card Layout)",
+          "Section 4 – Products Highlight",
+          "Section 5 – Events & Innovation",
+          "Section 6 – CTA Footer"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero is full viewport height with a split left/right layout",
+        "Parallax depth effect is visible on scroll (background shapes move slower than content)",
+        "Two hero CTAs are present and link to /services and /contact",
+        "About preview section follows Z-pattern with glass metrics card overlay",
+        "Services section renders 4 cards with hover elevation and border animation",
+        "Products highlight section has horizontal scroll behavior with mock product cards",
+        "Events section has a dark navy background with white typography",
+        "CTA footer section renders the 'Let's Build the Future Together' headline"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Build the About page with a magazine-style asymmetrical layout containing: (1) Full-width typographic hero: large serif statement 'Technology with Purpose' with a side abstract image. (2) Vision & Mission section — asymmetric two-column: oversized faded numeral or icon on one side, mission text on the other. (3) Leadership Philosophy — centered large quote typography: 'Innovation with Integrity', followed by 2–3 philosophy pillars in a horizontal card row. (4) Why UNAI — 3-column icon grid with concise value propositions. (5) Horizontal scrolling Company Timeline — year markers and milestone text cards that translate horizontally on scroll (scroll-linked animation). (6) Team Culture section — minimal portrait placeholders in a grid; on hover, image slightly zooms, a soft overlay appears with name and role.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "About Page",
+          "Magazine + asymmetrical",
+          "Vision & Mission",
+          "Leadership philosophy",
+          "Why UNAI",
+          "Company timeline (horizontal parallax scroll)",
+          "Team culture (minimal portraits with hover reveal)",
+          "'Technology with Purpose'",
+          "'Innovation with Integrity'"
+        ]
+      },
+      "acceptanceCriteria": [
+        "About page hero displays the serif statement 'Technology with Purpose'",
+        "Vision & Mission, Leadership Philosophy, and Why UNAI sections are all present",
+        "Timeline section scrolls horizontally as the user scrolls vertically (or has a horizontal drag/scroll container)",
+        "Team grid items reveal name and role overlay on hover with smooth zoom transition",
+        "Layout is asymmetric and magazine-inspired, not a uniform two-column grid throughout"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Build the Services page with alternating split-screen sections for each service. Each section: one half is a large visual/illustration placeholder, the other half is the service name, description, and a 'Learn More' link — alternating left/right layout for each row. Services: AI Development, Enterprise Software, Cloud & Infrastructure, Data & Analytics, Consulting. Add large faded vertical typography in the background of each section (e.g., 'AI', 'CLOUD') at ~8–10% opacity as a design motif. Include a vertical animated process timeline at the bottom: a vertical line with nodes that animate in (scale + fade) as they enter the viewport, each with a step title and brief description.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Services Page",
+          "Split screen alternating sections",
+          "Each Service: Left image / Right description",
+          "Large vertical typography in background (faded)",
+          "AI Development",
+          "Enterprise Software",
+          "Cloud & Infrastructure",
+          "Data & Analytics",
+          "Consulting",
+          "Process timeline (vertical animated line)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Five service sections render with alternating left/right image-text split layout",
+        "Faded vertical background text is present for each service section",
+        "Vertical process timeline is present at the bottom of the page",
+        "Timeline nodes animate in as they enter the viewport on scroll",
+        "Each service section has a 'Learn More' interactive element"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Build the Products page as a premium product showcase. Each product block contains: a large mockup image placeholder, product name in large serif type, a short specs line, a bulleted feature list, and a 'Request Demo' CTA button. Include at least 3 product entries. Add a Comparison Section below: a minimal grid table comparing products across key feature rows — clean lines, no heavy borders, alternating soft row shading.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Products Page",
+          "Premium showcase style",
+          "Large product image mockup",
+          "Clean specs",
+          "Feature bullets",
+          "'Request Demo' CTA",
+          "Comparison section (minimal grid layout)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least 3 product showcase blocks are rendered",
+        "Each product has a mockup image, name, specs, feature bullets, and 'Request Demo' button",
+        "A comparison grid/table is present below the product showcases",
+        "Comparison table is minimal with clean lines and no heavy borders"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Build the Events page with a card masonry layout. Event categories: Conferences, Product Launches, Tech Summits, Webinars. Each event card: category tag, date, event title, short description, soft glass card style with hover elevation. Include a parallax full-width banner section with the headline 'Where Innovation Meets Industry' over a dark navy background with a subtle layered depth effect. Add a category filter row (All / Conferences / Product Launches / Tech Summits / Webinars) that filters the visible cards with a smooth fade transition.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Events Page",
+          "Card masonry layout",
+          "Conferences",
+          "Product launches",
+          "Tech summits",
+          "Webinars",
+          "Add parallax banner: 'Where Innovation Meets Industry'"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Events are displayed in a masonry or irregular card grid layout",
+        "Category filter row filters events with a smooth animation",
+        "Parallax banner with 'Where Innovation Meets Industry' is present",
+        "Event cards include category tag, date, title, and description",
+        "At least 6 sample event cards are populated across the four categories"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Build the Careers page with: (1) Culture Statement — full-width typographic section with a large serif headline and subtext about UNAI's culture. (2) Why Work at UNAI — horizontal row of 3–4 benefit cards with icons, each with a hover micro-interaction (soft lift). (3) Open Positions — accordion layout: each role is a collapsed row showing title and department; clicking expands to show description and an 'Apply Now' link. (4) Application CTA — minimal centered section: 'Shape the Future with Us' heading and a primary CTA button. (5) Soft animated background gradient — a very slow, subtle CSS gradient animation that shifts through the blue palette shades in the background of the culture statement section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Careers Page",
+          "Culture statement",
+          "Why work at UNAI",
+          "Open positions (accordion layout)",
+          "Application CTA",
+          "Soft animated background gradients"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Culture statement section renders with large serif headline",
+        "Why Work at UNAI section has at least 3 benefit cards with hover effects",
+        "Open positions accordion renders with at least 4 sample roles that expand/collapse smoothly",
+        "Apply Now link is present inside each expanded accordion item",
+        "Application CTA section is present at the bottom",
+        "Animated background gradient is visible in the culture section (slow, subtle, no harsh flicker)"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Build the Gallery page with a CSS masonry grid layout (varied card heights). Display at least 12 gallery items. Each item: on hover, the image slightly zooms (scale 1.05), a dark overlay fades in, and a title appears over the image. Category filter bar: All / Events / Products / Office — filters items with a smooth fade/reorder animation. Gallery items are categorized and filtered client-side using React state.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Gallery Page",
+          "Masonry grid",
+          "Hover: Blur background / Title overlay / Smooth zoom",
+          "Category filter (All / Events / Products / Office)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Gallery renders in a masonry grid with varied card heights",
+        "At least 12 gallery items are present, distributed across four categories",
+        "Hover effect shows zoom, dark overlay, and title text simultaneously",
+        "Category filter buttons are present and functional, filtering items with animation",
+        "Filtering is client-side and instantaneous (no backend call)"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Build the Contact page with a split-screen layout: Left half contains a minimal contact form with glass-style inputs (rounded corners 20px, semi-transparent background, soft border, focus glow in #7BBDE8). Form fields: Full Name, Company, Email, Phone, Message, and a 'Send Message' submit button. Right half contains: a stylized placeholder map block (minimal flat-style rectangle with grid lines and a pin icon, no external map service), and below it: company contact details (address, email, phone) in clean typography. Page headline: large serif 'Start the Conversation.' spanning above the split layout. Form submission stores the message in the backend (Motoko actor) and shows a success confirmation inline.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Contact Page",
+          "Split screen",
+          "Minimal form / Rounded glass inputs",
+          "Map section (minimal style)",
+          "Company contact info",
+          "Large typographic headline: 'Start the Conversation.'"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Page headline 'Start the Conversation.' is rendered in large serif typography",
+        "Split-screen layout is present with form on left and map+info on right",
+        "Form inputs have glass morphism styling with rounded corners and soft focus glow",
+        "All six form fields are present and validated (name, company, email, phone, message)",
+        "Submitting the form calls the backend actor to store the contact message",
+        "A success confirmation message appears inline after successful submission",
+        "Right panel shows a stylized placeholder map and company contact details",
+        "No external map API is used"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Implement React Router-based multi-page routing for all 8 pages: /, /about, /services, /products, /events, /careers, /gallery, /contact. Each route renders the corresponding page component. Navigation links in the Navbar and Footer route to the correct page. All routes are handled client-side.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Multi Page",
+          "Home, About, Services, Products, Events, Careers, Gallery, Contact"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All 8 routes are registered and render the correct page",
+        "Navbar links navigate to the correct routes without full page reload",
+        "Direct URL access to each route renders the correct page",
+        "404 / unknown routes redirect to the Home page"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Backend (Motoko): Implement a single actor that stores contact form submissions. Define a ContactMessage record type with fields: id (Nat), name (Text), company (Text), email (Text), phone (Text), message (Text), timestamp (Int). Expose: submitContact(name, company, email, phone, message) → async Nat (returns generated ID), getContacts() → async [ContactMessage] (admin read). Use a stable array or stable HashMap for persistence across upgrades.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Contact Page",
+          "Minimal form"
+        ]
+      },
+      "acceptanceCriteria": [
+        "submitContact function accepts all five fields and returns a unique ID",
+        "All submitted messages are stored in stable state",
+        "getContacts returns all stored messages",
+        "The actor compiles without errors in Motoko"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Generate all required static visual assets for the website: hero abstract tech background image, about section feature image, placeholder product mockup images (3), placeholder team portrait images (6), placeholder gallery images (12 across categories), and a service illustration for each of the 5 services. Store all generated images in frontend/public/assets/generated. Reference them by relative path in the frontend components.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Right: Abstract tech 3D visual",
+          "Large product image mockup",
+          "Team culture (minimal portraits with hover reveal)",
+          "Masonry grid"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero background image exists at frontend/public/assets/generated/",
+        "Product mockup images (3) exist and are referenced in the Products page",
+        "Team portrait placeholders (6) exist and are referenced in the About page",
+        "Gallery images (12) exist and are referenced in the Gallery page",
+        "Service illustration images (5) exist and are referenced in the Services page",
+        "All images load without 404 errors"
+      ]
+    }
+  ],
+  "constraints": [
+    "Primary background color must be exactly #BDD8E9; do not substitute",
+    "No external map APIs (Google Maps, Mapbox, etc.) — use a styled placeholder",
+    "No heavy gradients, no generic SaaS template aesthetics",
+    "All font loading must be from Google Fonts (Playfair Display + Inter) with font-display: swap",
+    "All animations must be subtle — no over-animation or distracting motion",
+    "Do not edit any file under frontend/src/hooks/ or frontend/src/components/ui",
+    "No external real-time or WebSocket features",
+    "All routing is client-side React Router; no server-side rendering"
+  ],
+  "nonGoals": [
+    "User authentication or login system",
+    "CMS or content management backend",
+    "Blog or news feed with dynamic external content",
+    "E-commerce or payment processing",
+    "Real-time chat or notifications",
+    "External social media API integrations",
+    "Actual video embedding or streaming",
+    "Admin dashboard for managing content",
+    "Multi-language / i18n support"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Abstract technology hero background — deep navy to soft blue geometric network pattern with floating nodes and subtle grid lines (hero-bg.dim_1920x1080.png)",
+      "About section feature photograph — minimal modern office interior with large windows, soft blue tones, and clean architectural lines (about-feature.dim_900x700.png)",
+      "Product mockup one — dark navy laptop screen showing a clean enterprise dashboard UI with data charts in blue tones (product-mockup-1.dim_800x560.png)",
+      "Product mockup two — sleek mobile phone mockup showing a minimal AI analytics interface with soft blue gradients (product-mockup-2.dim_800x560.png)",
+      "Product mockup three — isometric server rack illustration in deep navy and teal tones on a light background (product-mockup-3.dim_800x560.png)",
+      "AI Development service illustration — minimal line-art brain and circuit pattern in navy and teal on transparent/white background (service-ai.dim_600x500.png)",
+      "Enterprise Software service illustration — minimal isometric building blocks and code window in royal blue tones (service-enterprise.dim_600x500.png)",
+      "Cloud Infrastructure service illustration — abstract floating cloud shapes with soft blue gradient and connection lines (service-cloud.dim_600x500.png)",
+      "Data Analytics service illustration — minimal bar and line chart motif with soft blue and teal palette (service-data.dim_600x500.png)",
+      "Consulting service illustration — two abstract human silhouettes in conversation with a network diagram overlay in navy tones (service-consulting.dim_600x500.png)",
+      "Team portrait placeholder one — professional headshot style neutral portrait silhouette with soft blue background (team-1.dim_400x500.png)",
+      "Team portrait placeholder two — professional headshot style neutral portrait silhouette with soft blue background (team-2.dim_400x500.png)",
+      "Team portrait placeholder three — professional headshot style neutral portrait silhouette with soft blue background (team-3.dim_400x500.png)",
+      "Team portrait placeholder four — professional headshot style neutral portrait silhouette with soft blue background (team-4.dim_400x500.png)",
+      "Team portrait placeholder five — professional headshot style neutral portrait silhouette with soft blue background (team-5.dim_400x500.png)",
+      "Team portrait placeholder six — professional headshot style neutral portrait silhouette with soft blue background (team-6.dim_400x500.png)",
+      "Gallery image events one — wide shot of a technology conference hall with blue stage lighting and audience silhouettes (gallery-events-1.dim_800x600.png)",
+      "Gallery image events two — close-up of a speaker at a podium with a large screen displaying the UNAI wordmark (gallery-events-2.dim_800x600.png)",
+      "Gallery image events three — overhead view of a round-table discussion with laptops and notebooks in a modern boardroom (gallery-events-3.dim_800x600.png)",
+      "Gallery image products one — lifestyle flat-lay of product devices on a navy surface with minimal props (gallery-products-1.dim_800x600.png)",
+      "Gallery image products two — dark studio product render of a glowing screen device against deep navy backdrop (gallery-products-2.dim_800x600.png)",
+      "Gallery image products three — isometric 3D render of software interface blocks floating in blue gradient space (gallery-products-3.dim_800x600.png)",
+      "Gallery image office one — bright open-plan tech office interior with floor-to-ceiling windows and clean desks (gallery-office-1.dim_800x600.png)",
+      "Gallery image office two — close-up of a modern reception desk with the UNAI name carved in frosted glass (gallery-office-2.dim_800x600.png)",
+      "Gallery image office three — minimalist breakout lounge area with curved seating and soft blue accent walls (gallery-office-3.dim_800x600.png)",
+      "Gallery image webinar one — laptop screen showing a video call grid of professional participants in a bright room (gallery-webinar-1.dim_800x600.png)",
+      "Gallery image webinar two — split screen of a presenter and a slide deck about AI transformation in navy and white (gallery-webinar-2.dim_800x600.png)",
+      "Gallery image webinar three — top-down view of a person typing at a desk with a webinar interface visible on screen (gallery-webinar-3.dim_800x600.png)"
+    ],
+    "edits": []
+  }
+}

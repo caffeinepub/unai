@@ -1,0 +1,117 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T14:38:04.156Z",
+  "summary": "The diff implements the majority of the 14 requirements including all 8 page components, global design system, navbar/footer, routing (via TanStack Router instead of React Router), backend Motoko actor, custom cursor, page load animation, GlassCard, scroll reveal, dark/light theme, and most visual features. Several specific requirements are partially or potentially missing based on the truncated diff evidence.",
+  "missing_requirements": [
+    {
+      "requirement": "All routing must be client-side React Router (react-router-dom). The implementation uses @tanstack/react-router instead.",
+      "reason": "The build request explicitly requires 'All routing is client-side React Router; no server-side rendering' and REQ-12 specifies React Router-based routing. The diff uses @tanstack/react-router throughout App.tsx and all page components.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "Hero right side should have an abstract 3D-style tech visual (Three.js scene with floating geometric shapes or animated SVG). The parallax hero right side appears to use only CSS-animated border circles and particle dots, not a Three.js scene.",
+      "reason": "The spec explicitly requests a Three.js scene or animated SVG on the right side of the hero. The diff shows only CSS circles and floating dots with no Three.js import or canvas element.",
+      "evidence": [
+        "frontend/src/pages/Home.tsx"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "The About page team section should include 6 portrait placeholders. The diff only defines 5 team members (team-1 through team-5).",
+      "reason": "REQ-14 and REQ-5 both require 6 team portrait placeholders. The About.tsx team array only has 5 entries.",
+      "evidence": [
+        "frontend/src/pages/About.tsx"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "requirement": "Gallery category filter should include All, Events, Products, Office per the spec. The diff implements an extra Webinars category not in the spec for Gallery.",
+      "reason": "REQ-10 specifies exactly four categories: All, Events, Products, Office. The Gallery.tsx adds a fifth Webinars category not specified.",
+      "evidence": [
+        "frontend/src/pages/Gallery.tsx"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "requirement": "Backend actor should use a stable array or stable HashMap for persistence across upgrades.",
+      "reason": "The Motoko actor uses 'let contactList = List.empty()' and 'var nextId = 0' without the 'stable' keyword, which means state will not persist across canister upgrades as required.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Smooth page transitions — fade or slide between routes (300ms ease-in-out) should be implemented for route changes.",
+      "reason": "The diff shows page-fade-in class applied per page but no route-change transition orchestration wrapper is visible. No animated transition component bridging route changes is shown.",
+      "evidence": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/Home.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "getContactsSorted() function added to the backend actor with ascending/descending timestamp sorting.",
+      "reason": "The build request only requires submitContact() and getContacts() functions. The getContactsSorted() function was not requested in REQ-13.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Gallery page includes a Webinars category in addition to the specified All/Events/Products/Office categories.",
+      "reason": "REQ-10 explicitly lists only four categories for the Gallery: All, Events, Products, Office. Webinars is not listed as a gallery category.",
+      "evidence": [
+        "frontend/src/pages/Gallery.tsx"
+      ]
+    },
+    {
+      "description": "MixinStorage blob-storage mixin is imported and included in the backend actor.",
+      "reason": "REQ-13 only requires a contact message storage actor. No blob storage or file upload capability was requested.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "ContactMessage module with compareByTimestampAsc and compareByTimestampDesc sorting functions added to backend.",
+      "reason": "These sorting utilities support the unrequested getContactsSorted() function. Not part of any specified requirement.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "confidence": 0.62,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/CustomCursor.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/GlassCard.tsx",
+    "frontend/src/components/Navbar.tsx",
+    "frontend/src/components/PageLoadAnimation.tsx",
+    "frontend/src/components/SectionDivider.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/hooks/useScrollReveal.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/About.tsx",
+    "frontend/src/pages/Careers.tsx",
+    "frontend/src/pages/Contact.tsx",
+    "frontend/src/pages/Events.tsx",
+    "frontend/src/pages/Gallery.tsx",
+    "frontend/src/pages/Home.tsx",
+    "frontend/src/pages/Products.tsx",
+    "frontend/src/pages/Services.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}
